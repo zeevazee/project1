@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Tester Manufacturers in Chennai</title>
+    <style>
+        :root {
+            --primary-green: #28a745;
+            --dark-green: #218838;
+            --light-green: #34d058;
+            --lighter-green: #6dbd56;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .listing {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .listing:hover {
+            background-color: var(--lighter-green);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .listing h3 {
+            margin-top: 0;
+            color: var(--dark-green);
+        }
+
+        .ratings {
+            font-size: 16px;
+            color: var(--dark-green);
+        }
+
+        .info {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .contact {
+            margin-top: 10px;
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: var(--primary-green);
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .review-section {
+            margin-top: 15px;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .review-section h4 {
+            font-size: 16px;
+            color: var(--dark-green);
+        }
+
+        .review {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 8px;
+            margin-top: 8px;
+        }
+
+        .review p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .review .reviewer {
+            font-weight: bold;
+            color: var(--dark-green);
+        }
+
+        .view-button {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-button:hover {
+            background-color: var(--light-green);
+        }
+
+        .review-form {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .review-form input, .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .review-form button {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .review-form button:hover {
+            background-color: var(--light-green);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .listing {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+
+            .view-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header {
+                font-size: 18px;
+            }
+
+            .listing h3 {
+                font-size: 18px;
+            }
+
+            .ratings {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        function toggleReviews(id) {
+            var reviewSection = document.getElementById(id);
+            if (reviewSection.style.display === "none") {
+                reviewSection.style.display = "block";
+            } else {
+                reviewSection.style.display = "none";
+            }
+        }
+
+        function loadReviews(listingId) {
+            var savedReviews = localStorage.getItem('reviews_' + listingId);
+            if (savedReviews) {
+                var reviews = JSON.parse(savedReviews);
+                var reviewSection = document.getElementById('reviewSection' + listingId);
+                reviews.forEach(function(review) {
+                    var reviewDiv = document.createElement('div');
+                    reviewDiv.classList.add('review');
+                    reviewDiv.innerHTML = `<p><span class="reviewer">${review.reviewer}:</span> ${review.text}</p>`;
+                    reviewSection.appendChild(reviewDiv);
+                });
+            }
+        }
+
+        function submitReview(listingId) {
+            var reviewerName = document.getElementById('reviewerName' + listingId).value;
+            var reviewText = document.getElementById('reviewText' + listingId).value;
+
+            if (reviewerName && reviewText) {
+                var savedReviews = localStorage.getItem('reviews_' + listingId);
+                var reviews = savedReviews ? JSON.parse(savedReviews) : [];
+
+                reviews.push({
+                    reviewer: reviewerName,
+                    text: reviewText
+                });
+
+                localStorage.setItem('reviews_' + listingId, JSON.stringify(reviews));
+
+                // Clear form fields
+                document.getElementById('reviewerName' + listingId).value = '';
+                document.getElementById('reviewText' + listingId).value = '';
+
+                // Reload reviews
+                loadReviews(listingId);
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Popular Soil Tester Manufacturers in Chennai</h1>
+</header>
+
+<div class="container">
+    <!-- Listing 1 -->
+    <div class="listing">
+        <h3>Aerann Instruments & Engineering Services Pvt Ltd</h3>
+        <div class="ratings">4.3 ★ (2 Ratings)</div>
+        <div class="info">4th Street Pudhukottai Guindy, Chennai</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review1')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm1')">Add Review</a>
+        <div class="review-section" id="review1">
+            <h4>Reviews:</h4>
+            <div id="reviewSection1"></div>
+            <div class="review-form" id="reviewForm1">
+                <input type="text" id="reviewerName1" placeholder="Your Name" required>
+                <textarea id="reviewText1" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(1)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listing 2 -->
+    <div class="listing">
+        <h3>Edutech Group Of Tnei Company</h3>
+        <div class="ratings">3.5 ★ (1 Rating)</div>
+        <div class="info">Choolaimedu, Chennai</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review2')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm2')">Add Review</a>
+        <div class="review-section" id="review2">
+            <h4>Reviews:</h4>
+            <div id="reviewSection2"></div>
+            <div class="review-form" id="reviewForm2">
+                <input type="text" id="reviewerName2" placeholder="Your Name" required>
+                <textarea id="reviewText2" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(2)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listing 3 -->
+    <div class="listing">
+        <h3>Aimil Ltd (Branch Office)</h3>
+        <div class="ratings">4.4 ★ (56 Ratings)</div>
+        <div class="info">Outer Ring Road Nagawara, Bangalore</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review3')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm3')">Add Review</a>
+        <div class="review-section" id="review3">
+            <h4>Reviews:</h4>
+            <div id="reviewSection3"></div>
+            <div class="review-form" id="reviewForm3">
+                <input type="text" id="reviewerName3" placeholder="Your Name" required>
+                <textarea id="reviewText3" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(3)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listing 4 -->
+    <div class="listing">
+        <h3>SoilScience Instruments Pvt Ltd</h3>
+        <div class="ratings">4.0 ★ (5 Ratings)</div>
+        <div class="info">Kotturpuram, Chennai</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review4')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm4')">Add Review</a>
+        <div class="review-section" id="review4">
+            <h4>Reviews:</h4>
+            <div id="reviewSection4"></div>
+            <div class="review-form" id="reviewForm4">
+                <input type="text" id="reviewerName4" placeholder="Your Name" required>
+                <textarea id="reviewText4" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(4)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listing 5 -->
+    <div class="listing">
+        <h3>Techno Instruments</h3>
+        <div class="ratings">3.8 ★ (3 Ratings)</div>
+        <div class="info">T Nagar, Chennai</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review5')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm5')">Add Review</a>
+        <div class="review-section" id="review5">
+            <h4>Reviews:</h4>
+            <div id="reviewSection5"></div>
+            <div class="review-form" id="reviewForm5">
+                <input type="text" id="reviewerName5" placeholder="Your Name" required>
+                <textarea id="reviewText5" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(5)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listing 6 -->
+    <div class="listing">
+        <h3>Innovative Solutions Ltd</h3>
+        <div class="ratings">4.1 ★ (8 Ratings)</div>
+        <div class="info">Korattur, Chennai</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review6')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm6')">Add Review</a>
+        <div class="review-section" id="review6">
+            <h4>Reviews:</h4>
+            <div id="reviewSection6"></div>
+            <div class="review-form" id="reviewForm6">
+                <input type="text" id="reviewerName6" placeholder="Your Name" required>
+                <textarea id="reviewText6" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(6)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listing 7 -->
+    <div class="listing">
+        <h3>India Instruments</h3>
+        <div class="ratings">4.2 ★ (9 Ratings)</div>
+        <div class="info">Mylapore, Chennai</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review7')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm7')">Add Review</a>
+        <div class="review-section" id="review7">
+            <h4>Reviews:</h4>
+            <div id="reviewSection7"></div>
+            <div class="review-form" id="reviewForm7">
+                <input type="text" id="reviewerName7" placeholder="Your Name" required>
+                <textarea id="reviewText7" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(7)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listing 8 -->
+    <div class="listing">
+        <h3>GreenTech Instruments</h3>
+        <div class="ratings">4.5 ★ (7 Ratings)</div>
+        <div class="info">Adyar, Chennai</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review8')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm8')">Add Review</a>
+        <div class="review-section" id="review8">
+            <h4>Reviews:</h4>
+            <div id="reviewSection8"></div>
+            <div class="review-form" id="reviewForm8">
+                <input type="text" id="reviewerName8" placeholder="Your Name" required>
+                <textarea id="reviewText8" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(8)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listing 9 -->
+    <div class="listing">
+        <h3>SoilTech Engineering</h3>
+        <div class="ratings">4.0 ★ (4 Ratings)</div>
+        <div class="info">Nungambakkam, Chennai</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review9')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm9')">Add Review</a>
+        <div class="review-section" id="review9">
+            <h4>Reviews:</h4>
+            <div id="reviewSection9"></div>
+            <div class="review-form" id="reviewForm9">
+                <input type="text" id="reviewerName9" placeholder="Your Name" required>
+                <textarea id="reviewText9" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(9)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listing 10 -->
+    <div class="listing">
+        <h3>SoilTest Solutions</h3>
+        <div class="ratings">4.6 ★ (6 Ratings)</div>
+        <div class="info">Perungudi, Chennai</div>
+        <div class="contact">
+            <a href="#">Show Number</a> | <a href="#">WhatsApp</a>
+        </div>
+        <a href="#" class="view-button" onclick="toggleReviews('review10')">Click here to view reviews</a>
+        <a href="#" class="view-button" onclick="toggleReviews('reviewForm10')">Add Review</a>
+        <div class="review-section" id="review10">
+            <h4>Reviews:</h4>
+            <div id="reviewSection10"></div>
+            <div class="review-form" id="reviewForm10">
+                <input type="text" id="reviewerName10" placeholder="Your Name" required>
+                <textarea id="reviewText10" placeholder="Your Review" required></textarea>
+                <button type="button" onclick="submitReview(10)">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Load reviews for all listings
+    for (var i = 1; i <= 10; i++) {
+        loadReviews(i);
+    }
+</script>
+
+</body>
+</html>
