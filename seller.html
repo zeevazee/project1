@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2ecc71;
+            --dark-green: #27ae60;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, white, #f8f9fa);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(46, 204, 113, 0.2);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: linear-gradient(135deg, var(--dark-green), var(--primary-green));">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-flower1 me-2"></i>
+                Farming 360
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html"><i class="bi bi-house-door me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customer.html"><i class="bi bi-people me-1"></i> Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="seller.html"><i class="bi bi-shop me-1"></i> Seller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="warehouse.html"><i class="bi bi-building me-1"></i> Warehouse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html"><i class="bi bi-gear me-1"></i> Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html"><i class="bi bi-gear me-1"></i> About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to the Seller Page</h1>
+            <p>Manage your products, view orders, and grow your business with Farming 360.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Manage Products Card -->
+                <div class="col-md-4">
+                    <div class="card feature-card h-100" id="manageProductsCard" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <i class="bi bi-basket fs-1 text-success mb-3"></i>
+                            <h5 class="card-title">Manage Products</h5>
+                            <p class="card-text">Easily add, update, or remove products from your inventory.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- View Orders Card -->
+     <div class="col-md-4">
+                    <a href="SellerAll" style="text-decoration: none;">
+                        <div class="card feature-card h-100">
+                            <div class="card-body text-center">
+                                <i class="bi bi-list-ul fs-1 text-primary mb-3"></i>
+                                <h5 class="card-title">View Seller</h5>
+                                <p class="card-text">Browse through a list of all registered customers.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Add Seller Card -->
+                <div class="col-md-4">
+                    <div class="card feature-card h-100" id="addSellerCard" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <i class="bi bi-person-plus fs-1 text-success mb-3"></i>
+                            <h5 class="card-title">Add Seller</h5>
+                            <p class="card-text">Add new sellers to the platform seamlessly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-flower1 me-2"></i>Farming 360</h5>
+                    <p>Your trusted partner in agriculture</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Open "Add Seller" page when the card is clicked
+        document.getElementById('addSellerCard').addEventListener('click', function () {
+            window.location.href = 'addseller.html';  // Redirect to addseller.html
+        });
+
+        // Show buttons for "Manage Products" when card is clicked
+        document.getElementById('manageProductsCard').addEventListener('click', function () {
+            const container = document.querySelector('body');
+
+            // Clear the current content
+            container.innerHTML = `
+                <section class="hero-section">
+                    <div class="container text-center">
+                        <h1>Manage Products</h1>
+                        <p>Select an option below to manage your products:</p>
+                    </div>
+                </section>
+                <section class="py-5 text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3">
+                                <button class="btn btn-lg btn-success w-100 mb-3" id="addProductBtn">
+                                    <i class="bi bi-plus-circle me-2"></i>Add Products
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-lg btn-warning w-100 mb-3" id="updateProductBtn">
+                                    <i class="bi bi-pencil-square me-2"></i>Update Products
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-lg btn-danger w-100 mb-3" id="deleteProductBtn">
+                                    <i class="bi bi-trash me-2"></i>Delete Products
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `;
+        });
+    </script>
+</body>
+
+</html>
