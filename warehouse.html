@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2ecc71;
+            --dark-green: #27ae60;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, white, #f8f9fa);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(46, 204, 113, 0.2);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: linear-gradient(135deg, var(--dark-green), var(--primary-green));">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+                <i class="bi bi-flower1 me-2"></i>
+                Farming 360
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html"><i class="bi bi-house-door me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customer.html"><i class="bi bi-people me-1"></i> Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="seller.html"><i class="bi bi-shop me-1"></i> Seller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="warehouse.html"><i class="bi bi-building me-1"></i> Warehouse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html"><i class="bi bi-gear me-1"></i> Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i> About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to the Warehouse Page</h1>
+            <p>Access secure storage solutions and manage your inventory with ease.</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Add Warehouse Card -->
+                <div class="col-md-4">
+                    <div class="card feature-card h-100" id="addWarehouseCard" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <i class="bi bi-box-seam fs-1 text-success mb-3"></i>
+                            <h5 class="card-title">Add Warehouse</h5>
+                            <p class="card-text">Create and manage new warehouse locations seamlessly.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Show Warehouse Grid Card -->
+                <div class="col-md-4">
+                    <a href="WarehouseAll" class="text-decoration-none">
+                        <div class="card feature-card h-100">
+                            <div class="card-body text-center">
+                                <i class="bi bi-grid fs-1 text-success mb-3"></i>
+                                <h5 class="card-title">Warehouse Grid</h5>
+                                <p class="card-text">View the list of your warehouses in an organized grid format.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Warehouse Chart Card -->
+                <div class="col-md-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-geo-alt fs-1 text-success mb-3"></i>
+                            <h5 class="card-title">Warehouse Nearby Location</h5>
+                            <p class="card-text">Find the nearest warehouses based on your current location.</p>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="locationInput" placeholder="Enter location">
+                                <button class="btn btn-success mt-2" onclick="searchLocation()">Search</button>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Add Warehouse Modal -->
+    <div class="modal fade" id="addWarehouseModal" tabindex="-1" aria-labelledby="addWarehouseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addWarehouseModalLabel">Add New Warehouse</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addWarehouseForm" action="WarehouseServlet" method="POST">
+                        <div class="mb-3">
+                            <label for="warehouseName" class="form-label">Warehouse Name</label>
+                            <input type="text" class="form-control" id="warehouseName" name="warehouse_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="warehouseLocation" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="warehouseLocation" name="warehouse_location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="warehouseCapacity" class="form-label">Capacity</label>
+                            <input type="number" class="form-control" id="warehouseCapacity" name="warehouse_capacity" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="warehouseManager" class="form-label">Manager</label>
+                            <input type="text" class="form-control" id="warehouseManager" name="warehouse_manager" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="warehousePhone" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="warehousePhone" name="warehouse_phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="warehouseEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="warehouseEmail" name="warehouse_email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="warehouseType" class="form-label">Type</label>
+                            <input type="text" class="form-control" id="warehouseType" name="warehouse_type" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="warehouseInventoryCount" class="form-label">Inventory Count</label>
+                            <input type="number" class="form-control" id="warehouseInventoryCount" name="warehouse_inventory_count" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="warehouseStatus" class="form-label">Status</label>
+                            <input type="text" class="form-control" id="warehouseStatus" name="warehouse_status" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Warehouse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-flower1 me-2"></i>Farming 360</h5>
+                    <p>Your trusted partner in agriculture</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        async function searchLocation() {
+    const locationInput = document.getElementById("locationInput").value;
+    if (!locationInput) {
+        alert("Please enter a location.");
+        return;
+    }
+
+    const geocodeUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(locationInput)}`;
+
+    try {
+        const response = await fetch(geocodeUrl);
+        const data = await response.json();
+
+        if (data.length === 0) {
+            alert("Location not found. Try again.");
+            return;
+        }
+
+        // Extract latitude and longitude
+        const lat = data[0].lat;
+        const lon = data[0].lon;
+
+        console.log(`Latitude: ${lat}, Longitude: ${lon}`);
+
+        // Fetch nearby warehouses
+        fetchNearbyWarehouses(lat, lon);
+    } catch (error) {
+        console.error("Error fetching location:", error);
+    }
+}
+
+
+    </script>
+</body>
+
+</html>
